@@ -1,9 +1,22 @@
-<h1>Dashboard</h1>
-<% @students.each do |student| %>
-  <div>
-    <h2><%= student.name %></h2>
-    <p>Status: <%= student.status %></p>
-    <p>Payment Status: <%= student.payment_status %></p>
-    <%= link_to "View Details", student_path(student) %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <!-- Include your CSS and JavaScript assets here -->
+</head>
+<body>
+  <div class="dashboard-container">
+    <h1>Dashboard</h1>
+    <div class="student-list">
+      <% @students.each do |student| %>
+        <div class="student">
+          <h2><%= student.name %></h2>
+          <p>Status: <%= student.status %></p>
+          <p>Payment Status: <%= student.payment_status %></p>
+          <%= link_to "View Details", student_path(student), class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
+</body>
+</html>
