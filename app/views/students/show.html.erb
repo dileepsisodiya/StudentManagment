@@ -1,0 +1,12 @@
+<h1><%= @student.name %></h1>
+<p>Status: <%= @student.status %></p>
+<p>Payment Status: <%= @student.payment_status %></p>
+
+<h2>Bills</h2>
+<% @student.bills.each do |bill| %>
+  <div>
+    <p>Amount: <%= bill.amount %></p>
+    <p>Status: <%= bill.status %></p>
+    <%= link_to "View Bill", bill_path(bill) %>
+  </div>
+<% end %>

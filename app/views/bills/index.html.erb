@@ -1,0 +1,8 @@
+<h1>Bills</h1>
+<% @bills.each do |bill| %>
+  <div>
+    <p>Amount: <%= bill.amount %></p>
+    <p>Status: <%= bill.status %></p>
+    <%= link_to "View Bill", bill_path(bill) %>
+  </div>
+<% end %>
